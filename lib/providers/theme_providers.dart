@@ -7,12 +7,12 @@ class ThemeProviders extends StateNotifier<bool>{
   void toggleTheme() async {
     state=!state;
     final SharedPreferences prefs= await SharedPreferences.getInstance();
-    await prefs.setBool('appThemeValue', state);
+    await prefs.setBool('appThemeValue1', state);
   }
 
     Future getAppTheme() async{
     final SharedPreferences prefs= await SharedPreferences.getInstance();
-    final bool? appTheme = prefs.getBool('appThemeValue');
+    final bool? appTheme = prefs.getBool('appThemeValue1');
     state= appTheme??false;
   }
 }
